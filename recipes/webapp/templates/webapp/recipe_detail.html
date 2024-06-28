@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}" alt="Profile image">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{% url 'user-recipes' object.author.username %}">{{ object.author }}</a>
+        <small class="text-muted">{{ object.created_date|date:"d-m-Y" }} {{ object.created_date|time:"H:i" }}</small>
+        {% if object.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'recipe-update' object.id %}">Редактировать</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'recipe-delete' object.id %}">Удалить</a>
+          </div>
+        {% endif %}
+      </div>
+      <h4 class="article-title">{{ object.title }}</h4>
+      <img src="{{ object.image.url }}" class="img-fluid rounded" style="max-height: 500px; width: auto; margin-bottom: 1rem; object-fit: contain;" alt="{{ object.title }}">
+      <p class="article-content"><b>Рецепт из категории:</b> "{{ object.category }}"</p>
+      <p class="article-content"><b>Время приготовления:</b><br>{{ object.cooking_time }}</p>
+      <p class="article-content"><b>Описание рецепта:</b><br>{{ object.description }}</p>
+      <p class="article-content"><b>Ингредиенты:</b><br>{{ object.ingredients }}</p>
+      <p class="article-content"><b>Шаги приготовления:</b><br>{{ object.cooking_steps }}</p>
+    </div>
+  </article>
+{% endblock content %}

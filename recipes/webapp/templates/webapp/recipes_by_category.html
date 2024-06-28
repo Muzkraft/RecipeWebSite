@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 class="mb-3">Рецепты из категории "{{ category.name }}"</h3>
+    {% if recipes %}
+        {% for r in recipes %}
+            <article class="media content-section">
+                <img class="rounded-circle article-img" src="{{ r.author.profile.image.url }}" alt="{{ r.author.username }}'s profile image">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="{% url 'user-recipes' r.author.username %}">{{ r.author }}</a>
+                        <small class="text-muted">{{ r.created_date|date:"d-m-Y" }} {{ r.created_date|time:"H:i" }}</small>
+                    </div>
+                    <h4><a class="article-title" href="{% url 'recipe-detail' r.id %}">{{ r.title }}</a></h4>
+                    <a href="{% url 'recipe-detail' r.id %}">
+                        <img src="{{ r.image.url }}" class="img-fluid rounded"
+                         style="max-height: 500px; width: auto; margin-bottom: 1rem; object-fit: contain;"
+                         alt="{{ r.title }}">
+                    </a>
+                    <p class="article-content">{{ r.description }}</p>
+                 </div>
+            </article>
+        {% endfor %}
+    {% else %}
+        <h6 class="mb-3">В этой категории рецепты пока не добавлены</h6>
+    {% endif %}
+    <!--Пагинация-->
+    <div class="pagination justify-content-center">
+        {% if is_paginated %}
+
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-info mb-4 mr-1" href="?page=1">Первая</a>
+                <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                <a class="btn btn-outline-info mb-4 mr-1" href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock content %}

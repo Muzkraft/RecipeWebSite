@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Редактировать рецепт или создать новый</legend>
+            {{ form }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Сохранить</button>
+        </div>
+    </form>
+    {% if form.errors %}
+        <div class="alert alert-danger mt-4" role="alert">
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                {% if field.errors %}
+                    <strong>{{ field.label_tag }}:</strong>
+                    {% for error in field.errors %}
+                        {{ error|escape }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}<br>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% elif saved_successfully %}
+        <div class="alert alert-success mt-4" role="alert">
+            Рецепт успешно сохранен!
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

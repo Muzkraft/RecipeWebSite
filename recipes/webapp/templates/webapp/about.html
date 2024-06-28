@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<article class="media content-section">
+    <div class="media-body">
+        <h3 class="article-title">О проекте</h3>
+        <img src="{% static 'webapp/images/about.jfif' %}" class="img-fluid rounded" style="margin-bottom: 1rem;"
+             alt="Фото участников клуба">
+        <p class="article-content">Это учебный сайт рецептов собранный из разных частей на коленке за два вечера,
+            так что не судите строго, всё можно улучшить и доработать. </p>
+    </div>
+</article>
+{% endblock content %}

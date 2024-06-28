@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Удаление записи</legend>
+                <h4>Вы уверены, что хотите удалить рецепт "{{ object.title }}"?</h4>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Безусловно</button>
+                <a class="btn btn-outline-secondary" href="{% url 'recipe-detail' object.id %}">Упс, ошибочка вышла!</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
