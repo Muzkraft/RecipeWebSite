@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
 from django.core.files.storage import default_storage
-from imagekit.models import ProcessedImageField, ImageSpecField
-from imagekit.processors import ResizeToFit
 import logging
 
 logger = logging.getLogger(__name__)
@@ -38,17 +36,7 @@ class Recipe(models.Model):
     ingredients = models.TextField(blank=False, verbose_name="Ингредиенты")
     cooking_steps = models.TextField(blank=False, verbose_name="Шаги приготовления")
     cooking_time = models.DurationField(blank=False, verbose_name="Время приготовления (чч:мм:сс)")
-    image = ProcessedImageField(upload_to=user_directory_path,
-                                processors=[ResizeToFit(1024, 768)],
-                                format='JPEG',
-                                options={'quality': 90},
-                                blank=False,
-                                verbose_name="Изображение блюда")
-    # Поле для показа миниатюр изображений блюда, чтобы не загружать изображение полностью
-    image_thumbnail = ImageSpecField(source='image',
-                                     processors=[ResizeToFit(100, 100)],
-                                     format='JPEG',
-                                     options={'quality': 90})
+    image = models.ImageField(upload_to=user_directory_path, verbose_name="Изображение блюда")
     author = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, verbose_name="Автор рецепта")
     active = models.BooleanField(default=True, verbose_name="Статус активности")
     created_date = models.DateTimeField(default=timezone.now, verbose_name="Дата создания")

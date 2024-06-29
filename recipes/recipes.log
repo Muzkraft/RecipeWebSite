@@ -4467,3 +4467,34 @@ INFO 2024-06-28 21:51:25,150 basehttp 19468 6428 "GET / HTTP/1.1" 200 9864
 INFO 2024-06-28 21:51:25,205 basehttp 19468 6428 "GET /static/webapp/main.css HTTP/1.1" 304 0
 INFO 2024-06-28 22:14:36,745 basehttp 19468 7104 "GET / HTTP/1.1" 200 9793
 INFO 2024-06-28 22:14:36,799 basehttp 19468 7104 "GET /static/webapp/main.css HTTP/1.1" 304 0
+INFO 2024-06-28 23:43:25,220 autoreload 18472 3908 Watching for file changes with StatReloader
+INFO 2024-06-28 23:44:36,133 autoreload 19612 8360 Watching for file changes with StatReloader
+INFO 2024-06-28 23:45:23,546 autoreload 19612 8360 E:\Edu\Django\Seminar\Cooking\recipes\recipes\settings.py changed, reloading.
+INFO 2024-06-28 23:45:24,079 autoreload 22424 14620 Watching for file changes with StatReloader
+INFO 2024-06-28 23:45:36,236 autoreload 5700 11016 Watching for file changes with StatReloader
+INFO 2024-06-28 23:45:46,109 autoreload 5700 11016 E:\Edu\Django\Seminar\Cooking\recipes\recipes\settings.py changed, reloading.
+INFO 2024-06-28 23:45:46,637 autoreload 12452 14140 Watching for file changes with StatReloader
+INFO 2024-06-28 23:46:39,283 autoreload 12452 14140 E:\Edu\Django\Seminar\Cooking\recipes\recipes\settings.py changed, reloading.
+INFO 2024-06-28 23:46:39,837 autoreload 1312 8624 Watching for file changes with StatReloader
+INFO 2024-06-28 23:47:00,905 autoreload 25144 13888 Watching for file changes with StatReloader
+INFO 2024-06-28 23:47:43,483 autoreload 4720 24312 Watching for file changes with StatReloader
+INFO 2024-06-28 23:48:10,318 autoreload 4720 24312 E:\Edu\Django\Seminar\Cooking\recipes\recipes\settings.py changed, reloading.
+INFO 2024-06-28 23:48:10,837 autoreload 9476 3812 Watching for file changes with StatReloader
+INFO 2024-06-28 23:48:15,710 basehttp 9476 4080 "GET /static/webapp/main.css HTTP/1.1" 304 0
+ERROR 2024-06-28 23:48:16,291 basehttp 9476 4080 "GET /favicon.ico HTTP/1.1" 500 59
+ERROR 2024-06-28 23:48:18,423 basehttp 9476 18756 "GET /favicon.ico HTTP/1.1" 500 59
+ERROR 2024-06-28 23:48:18,983 basehttp 9476 18756 "GET / HTTP/1.1" 500 59
+ERROR 2024-06-28 23:48:19,282 basehttp 9476 11304 "GET /favicon.ico HTTP/1.1" 500 59
+ERROR 2024-06-28 23:48:23,406 basehttp 9476 11304 "GET / HTTP/1.1" 500 59
+ERROR 2024-06-28 23:48:23,678 basehttp 9476 11304 "GET /favicon.ico HTTP/1.1" 500 59
+INFO 2024-06-28 23:48:49,560 autoreload 9476 3812 E:\Edu\Django\Seminar\Cooking\recipes\recipes\settings.py changed, reloading.
+INFO 2024-06-28 23:48:50,092 autoreload 11368 24812 Watching for file changes with StatReloader
+INFO 2024-06-28 23:48:53,528 basehttp 11368 23284 "GET / HTTP/1.1" 200 9793
+INFO 2024-06-28 23:48:53,583 basehttp 11368 23284 "GET /media/users_media/profile_pics/user_1/ape.jpg HTTP/1.1" 304 0
+WARNING 2024-06-28 23:48:53,647 log 11368 23284 Not Found: /favicon.ico
+WARNING 2024-06-28 23:48:53,647 basehttp 11368 23284 "GET /favicon.ico HTTP/1.1" 404 4720
+INFO 2024-06-28 23:48:59,014 basehttp 11368 23284 "GET /recipes/category/3/ HTTP/1.1" 200 4824
+INFO 2024-06-28 23:49:00,571 basehttp 11368 23284 "GET /recipes/category/2/ HTTP/1.1" 200 7655
+INFO 2024-06-28 23:49:04,452 basehttp 11368 23284 "GET /recipes/category/1/ HTTP/1.1" 200 6696
+INFO 2024-06-29 01:33:21,791 autoreload 11368 24812 E:\Edu\Django\Seminar\Cooking\recipes\usersapp\models.py changed, reloading.
+INFO 2024-06-29 01:33:23,319 autoreload 9728 11468 Watching for file changes with StatReloader

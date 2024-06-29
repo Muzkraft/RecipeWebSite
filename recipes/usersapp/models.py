@@ -16,7 +16,7 @@ def user_directory_path(instance, filename):
 
 class Profile(models.Model):
     user: User = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name="Домочадец")
-    image = models.ImageField(default='вуафгде_avatar.jpg', upload_to=user_directory_path,
+    image = models.ImageField(default='default_avatar.jpg', upload_to=user_directory_path,
                               verbose_name="Аватар")
 
     class Meta:
