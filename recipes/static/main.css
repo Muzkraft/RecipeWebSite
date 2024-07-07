@@ -1,52 +1,53 @@
-body,
-html {
- width:100%;
- height:100%
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Montserrat;
 }
 
+
 body {
-  margin:0;
-  padding:0;
-  background: #fafafa;
-  color: #333333;
-  margin-top: 5rem;
-  font-family:Roboto;
+    background: #fafafa;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+    color: #444;
 }
 
 ul {
-  margin: 0;
+    margin: 0 auto;
+    align-content: center;
 }
 
-.bg-blue {
-  background-color: #6699cc;
-}
+/*.bg-blue {*/
+/*  background-color: #155daf;*/
+/*}*/
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: #0B63F6;
+    box-shadow: 0 5px 0 #003CC5;
 }
 
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
+.site-header .navbar-nav .user-nav-form .nav-button:hover {
+    background: #003CC5;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
 }
 
 .content-section {
-  background: #ffffff;
+  background: #fff;
   padding: 10px 20px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-radius: 3px;
   margin-bottom: 20px;
 }
 
 .article-title {
-  color: #444444;
+  color: #111;
 }
 
 a.article-title:hover {
@@ -93,11 +94,11 @@ a.article-title:hover {
 }
 
 footer {
- position: sticky!important;
+ position: sticky;
  top: 100%;
  padding-top:25px;
  padding-bottom:25px;
- border-top:1px solid #ddd;
+ border-top:1px solid #802626;
 }
 
 footer p {
@@ -113,6 +114,6 @@ footer a{
 }
 
 footer a:hover {
-  color:#656;
+  color:#fff;
   text-decoration: none;
 }
